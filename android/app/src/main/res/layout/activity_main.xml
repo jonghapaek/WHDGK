@@ -5,12 +5,25 @@
     android:orientation="vertical"
     android:background="#0C0F0C">
 
-    <!-- 카메라 미리보기 (소형) -->
-    <androidx.camera.view.PreviewView
-        android:id="@+id/previewView"
+    <!-- ESP32-CAM 영상 (지팡이 카메라) -->
+    <ImageView
+        android:id="@+id/ivFrame"
         android:layout_width="match_parent"
         android:layout_height="180dp"
-        android:background="#000"/>
+        android:background="#000"
+        android:scaleType="centerCrop"/>
+
+    <!-- ESP32-CAM 연결 상태 -->
+    <TextView
+        android:id="@+id/tvEspStatus"
+        android:text="카메라: WiFi 'BlindCane_Cam' 연결 필요"
+        android:textSize="11sp"
+        android:textColor="#F59E0B"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:background="#150E00"/>
 
     <!-- AI 인식 결과 표시 -->
     <LinearLayout
@@ -40,7 +53,7 @@
             android:layout_gravity="center_vertical"/>
     </LinearLayout>
 
-    <!-- 연결 상태 -->
+    <!-- 블루투스 연결 상태 -->
     <TextView
         android:id="@+id/tvStatus"
         android:text="블루투스 기기를 선택하세요"
