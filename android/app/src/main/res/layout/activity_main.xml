@@ -3,65 +3,95 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp"
-    android:background="#1A1A2E">
+    android:background="#0C0F0C">
 
-    <TextView
-        android:text="AI 시각장애인 지팡이"
-        android:textSize="24sp"
-        android:textColor="#E0E0E0"
-        android:textStyle="bold"
-        android:gravity="center"
+    <!-- 카메라 미리보기 (소형) -->
+    <androidx.camera.view.PreviewView
+        android:id="@+id/previewView"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="#000"/>
+
+    <!-- AI 인식 결과 표시 -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="20dp"/>
+        android:orientation="horizontal"
+        android:background="#131713"
+        android:padding="10dp">
 
+        <TextView
+            android:id="@+id/tvObject"
+            android:text="AI 인식: 대기 중..."
+            android:textSize="15sp"
+            android:textColor="#4ADE80"
+            android:textStyle="bold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/tvConfidence"
+            android:text="신뢰도: -"
+            android:textSize="12sp"
+            android:textColor="#4B7A55"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"/>
+    </LinearLayout>
+
+    <!-- 연결 상태 -->
     <TextView
         android:id="@+id/tvStatus"
         android:text="블루투스 기기를 선택하세요"
-        android:textSize="16sp"
-        android:textColor="#90CAF9"
+        android:textSize="13sp"
+        android:textColor="#60A5FA"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="10dp"/>
+        android:padding="8dp"
+        android:background="#0D1A0D"/>
 
+    <!-- 마지막 음성 메시지 (크게 표시) -->
     <TextView
-        android:id="@+id/tvLastMsg"
+        android:id="@+id/tvMessage"
         android:text="대기 중..."
-        android:textSize="28sp"
+        android:textSize="24sp"
         android:textColor="#A5D6A7"
         android:textStyle="bold"
         android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:background="#2A2A3E"
-        android:padding="10dp"
-        android:layout_marginBottom="20dp"/>
+        android:layout_height="90dp"
+        android:background="#162016"
+        android:padding="12dp"
+        android:layout_marginTop="4dp"/>
 
+    <!-- 연결/새로고침 버튼 -->
     <Button
         android:id="@+id/btnConnect"
         android:text="장치 목록 새로고침"
-        android:textSize="18sp"
+        android:textSize="15sp"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:backgroundTint="#3949AB"
-        android:layout_marginBottom="20dp"/>
+        android:layout_height="52dp"
+        android:backgroundTint="#1A3A1A"
+        android:layout_margin="8dp"/>
 
     <TextView
-        android:text="페어링된 블루투스 장치:"
-        android:textColor="#BDBDBD"
-        android:textSize="14sp"
+        android:text="페어링된 블루투스 장치 (HC-05 선택):"
+        android:textColor="#4B7A55"
+        android:textSize="12sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="5dp"/>
+        android:paddingHorizontal="12dp"
+        android:paddingBottom="4dp"/>
 
     <ListView
         android:id="@+id/lvDevices"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#2A2A3E"
+        android:background="#131713"
+        android:divider="#1E3A22"
         android:dividerHeight="1dp"/>
 
 </LinearLayout>
