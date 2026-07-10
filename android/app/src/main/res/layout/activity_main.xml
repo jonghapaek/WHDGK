@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="#1A1A2E">
+
+    <TextView
+        android:text="AI 시각장애인 지팡이"
+        android:textSize="24sp"
+        android:textColor="#E0E0E0"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp"/>
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:text="블루투스 기기를 선택하세요"
+        android:textSize="16sp"
+        android:textColor="#90CAF9"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/tvLastMsg"
+        android:text="대기 중..."
+        android:textSize="28sp"
+        android:textColor="#A5D6A7"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#2A2A3E"
+        android:padding="10dp"
+        android:layout_marginBottom="20dp"/>
+
+    <Button
+        android:id="@+id/btnConnect"
+        android:text="장치 목록 새로고침"
+        android:textSize="18sp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:backgroundTint="#3949AB"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:text="페어링된 블루투스 장치:"
+        android:textColor="#BDBDBD"
+        android:textSize="14sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"/>
+
+    <ListView
+        android:id="@+id/lvDevices"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#2A2A3E"
+        android:dividerHeight="1dp"/>
+
+</LinearLayout>
